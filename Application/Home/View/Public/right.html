@@ -1,0 +1,33 @@
+ <aside class="right">
+    <div class="news">
+    <h3>
+      <p>最新<span>文章</span></p>
+    </h3>
+    <ul class="rank">
+    <foreach name='order' item='v' >
+    <?php foreach($order as $v):?>
+      <li><a href="<?=U('Art/detail')?>?art_id=<?=$v['art_id']?>" title="<?=$v['title']?>" target="_blank"><?=$v['title']?></a></li>
+      <?php endforeach ?>
+    </ul>
+    <h3 class="ph">
+      <p>点击<span>排行</span></p>
+    </h3>
+    <ul class="paih">
+     <?php foreach($sort as $v):?>
+      <li><a href="<?=U('Art/detail')?>?art_id=<?=$v['art_id']?>" title="<?=$v['title']?>" target="_blank"><?=$v['title']?></a></li>
+      <?php endforeach ?>
+    </ul>
+    <h3 class="links">
+      <p>友情<span>链接</span></p>
+    </h3>
+    <ul class="website">
+      <li><a href="/">个人博客</a></li>
+      <li><a href="/">谢泽文个人博客</a></li>
+      <li><a href="/">3DST技术网</a></li>
+      <li><a href="/">思衡网络</a></li>
+    </ul> 
+    </div>  
+    <!-- Baidu Button BEGIN -->
+    <div id="bdshare" class="bdshare_t bds_tools_32 get-codes-bdshare"><a class="bds_tsina"></a><a class="bds_qzone"></a><a class="bds_tqq"></a><a class="bds_renren"></a><span class="bds_more"></span><a class="shareCount"></a></div>
+    <!-- Baidu Button END -->   
+  </aside>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="renderer" content="webkit">
+    <title></title>  
+    <link rel="stylesheet" href="__PUBLIC__/Admin/css/pintuer.css">
+    <link rel="stylesheet" href="__PUBLIC__/Admin/css/admin.css">
+</head>
+<body>
+<form method="get" action="__ACTION__">
+  <div class="panel admin-panel">
+    <div class="panel-head"><strong class="icon-reorder"> 文章管理</strong></div>
+    <div class="padding border-bottom">
+       <div style="float: right;margin-right: 20px">
+          <a href="{:U('add')}" class="button border-yellow"><span class="icon-plus-square-o"></span> 添加内容</a>
+        </div>
+          <input type="text" placeholder="请输入文章搜索关键字" name="lt" class="input" style="width:250px;display:inline-block;margin-right: 10px" value="{:I('get.lt')}" />
+          <input type='submit' value="搜索"   class="button border-main" >
+    </div>
+    <table class="table table-hover text-center">
+      <tr>
+        <th>ID</th>
+        <th>用户名</th>       
+        <th>文章标题</th>
+        <th>所属分类</th>
+        <th>文章关键字</th>
+        <th width="25%">内容</th>
+        <th>点击量</th>   
+         <th>发表时间</th>
+        <th>操作</th>       
+      </tr>     
+      <?php foreach ($data as $k => $v):?> 
+        <tr>
+          <td>{$v.art_id}</td>
+          <td>{$v.nick}</td>
+          <td>{$v.title}</td>           
+          <td>{$v.catname}</td>           
+          <td>没啥看的</td>           
+          <td><?php echo substr(str_replace('','<br>',$v['content']),0,50).'...';?></td>
+          <td>{$v.click}</td>
+          <td><?php echo date("Y-m-d",$v['pubtime'])?></td>
+          <td>
+            <div class="button-group" style="margin-right:5px"> <a class="button border-main" href="{:U('edit')}?art_id={$v.art_id}"><span class="icon-edit"></span> 编辑</a> </div>
+            <div class="button-group"> <a class="button border-red" href="{:U('del')}?art_id={$v.art_id}" onclick="return del(1)"><span class="icon-trash-o" style="margin-right: 5px"></span>删除</a> </div>
+          </td>
+        </tr>
+      <?php endforeach?>
+    </table>
+  </div>
+      <div class="pagelist" style="margin-top: 20px"> {$page} </div>
+</form>
+<script type="text/javascript">
+
+function del(id){
+	if(confirm("您确定要删除吗?")){
+		
+	}
+}
+
+
+</script>
+</body></html>

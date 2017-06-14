@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="renderer" content="webkit">
+<title></title>
+<link rel="stylesheet" href="__PUBLIC__/Admin/css/pintuer.css">
+<link rel="stylesheet" href="__PUBLIC__/Admin/css/admin.css">
+<link href="__PUBLIC__/umeditor/themes/default/css/umeditor.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+<div class="panel admin-panel">
+  <div class="panel-head" id="add"><strong><span class="icon-pencil-square-o"></span>增加文章</strong></div>
+  <div class="body-content">
+    <form method="post" class="form-x" action="">
+      <div class="form-group">
+        <div class="label">
+          <label>标题：</label>
+        </div>
+        <div class="field">
+          <input type="text" class="input w50" value="{$data.title}" name="title" data-validate="required:请输入标题" />
+          <div class="tips"></div>
+        </div>
+      </div> 
+        <div class="form-group">
+          <div class="label">
+            <label>分类标题：</label>
+          </div>
+          <div class="field">
+            <select name="cat_id" class="input w50">
+            <foreach name='cats' item='v'>
+              <option value="{$v.cat_id}"<?php echo $v['cat_id'] == $data['cat_id'] ?"selected=selected" :'' ?>>{$v.catname}</option>
+              </foreach>
+            </select>
+            <div class="tips"></div>
+          </div>
+        </div>
+    <div class="clear"></div>
+      <div class="form-group">
+        <div class="label">
+          <label>内容关键字：</label>
+        </div>
+        <div class="field">
+          <input type="text" class="input" name="s_keywords" value=""/>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="label">
+          <label>内容：</label>
+        </div>
+        <div class="field">
+          <textarea id="text" name="content" class="input">{$data.content}</textarea>
+          <div class="tips"></div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="label">
+          <label></label>
+        </div>
+        <div class="field">
+          <button class="button bg-main icon-check-square-o btns" type="submit"> 提交</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<script src="__PUBLIC__/Admin/Js/jquery.js"></script>
+<script src="__PUBLIC__/umeditor/umeditor.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/umeditor/third-party/template.min.js"></script>
+<script src="__PUBLIC__/umeditor/umeditor.config.js"></script>
+<script src="__PUBLIC__/umeditor/lang/zh-cn/zh-cn.js"></script>
+<script type="text/javascript">
+
+    UM.getEditor('text',{
+            initialFrameWidth:'80%',
+            initialFrameHeight:500,      
+         }
+    );
+</script>
+</body></html>

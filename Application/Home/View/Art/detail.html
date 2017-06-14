@@ -1,0 +1,97 @@
+<layout name='layout' />
+<link href="__PUBLIC__/Home/css/new.css" rel="stylesheet">
+<link href="__PUBLIC__/umeditor/themes/default/css/umeditor.css" rel="stylesheet">
+<article class="blogs">
+  <h1 class="t_nav"><a href="javascript:;" class="n1">网站首页</a><a href="javascript:;" class="n2">日记</a></h1>
+  <div class="index_about">
+    <h2 class="c_titile">{$data.title}</h2>
+    <p class="box_c"><span class="d_time">发布时间：<?php echo date("Y-m-d",$data['pubtime'])?></span><span>编辑：杨青</span></p>
+    <ul class="infos">
+      <p>{$data.content}</p>
+    </ul>
+    <div class="keybq">
+    <p><span>关键字词</span>：爱情,犯错,原谅,分手</p>
+    </div>
+    <div class="ad"> </div>
+    <div class="nextinfo">
+      <?php if($prev){?>
+      <p>上一篇：<a href="{:U(detail)}?art_id={$prev.art_id}&cat_id={$prev.cat_id}">{$prev.title}</a></p>
+      <?php }else{ ?>
+      <p>上一篇：<a href="javascript:;">没有了</a></p>
+      <?php } ?>
+      <?php if($next){?>
+      <p>下一篇：<a href="{:U(detail)}?art_id={$next.art_id}&cat_id={$next.cat_id}">{$next.title}</a></p>
+      <?php }else{ ?>
+      <p>下一篇：<a href="javascript:;">没有了</a></p>
+       <?php } ?>
+    </div>
+    <div class="otherlink">
+      <h2>相关文章</h2>
+      <ul>
+        <foreach name='arts' item='v'>
+        <li><a href="{:U(detail)}?art_id={$v.art_id}&cat_id={$v.cat_id}" title="{$v.title}">{$v.title}</a></li>
+        </foreach>
+      </ul>
+    </div>
+    <div style="clear: both"></div>
+    <form action="__ACTION__" method="post">
+    <div class="comment "> 
+      <textarea id="comment"></textarea>
+      <button type="submit" class="btns">提交</button>
+    </div>
+    </form>
+    <div class="msg">
+        <h2><span>最新评论</span></h2>
+        <div class="user clearfix">
+          <div class="pic">
+            <img src="__PUBLIC__/Home/images/100.jpg">
+          </div>
+          <div class="userbox">
+            <p class="b_content"><span class="auth">爱便流通于世</span>：<span class="ct">期待开始laravel的项目<span></p>
+            <p class="pubtime">2017-06-12 08:06:28 <a href="javascript:;" aid='' class="return">回复</a></p>
+            <form class="retform" action="" method="post" style="display: none">
+            <textarea name='msg'class="retmsg"></textarea>
+            <button type="submit" class="btns">提交</button>
+            </form>
+          </div>
+          
+        </div>
+        <div class="user clearfix">
+          <div class="pic">
+            <img src="__PUBLIC__/Home/images/100.jpg">
+          </div>
+          <div class="userbox">
+            <p class="b_content"><span class="auth">爱便流通于世</span>：<span class="ct">期待开始laravel的项目<span></p>
+            <p class="pubtime">2017-06-12 08:06:28 <a href="javascript:;" aid='' class="return">回复</a></p>
+            <form class="retform" action="" method="post" style="display: none">
+            <textarea name='msg'class="retmsg"></textarea>
+            <button type="submit" class="btns">提交</button>
+            </form>
+          </div>
+          
+        </div>
+    </div>
+  </div>
+  <?php include T('Public/right')?>
+</article>
+<script src="__PUBLIC__/Home/Js/silder.js"></script>
+<script src="__PUBLIC__/Admin/Js/jquery.js"></script>
+<script type="text/javascript" src="__PUBLIC__/umeditor/third-party/template.min.js"></script>
+<script src="__PUBLIC__/umeditor/umeditor.config.js"></script>
+<script src="__PUBLIC__/umeditor/lang/zh-cn/zh-cn.js"></script>
+<script src="__PUBLIC__/umeditor/umeditor.min.js"></script>
+<script type="text/javascript">
+
+    UM.getEditor('comment',{
+            initialFrameWidth:'96%',
+            initialFrameHeight:200,      
+         }
+    );
+
+    $('.return').click(function(){
+      $(this).parent().siblings('.retform').toggle();
+    })
+</script>
+
+</body>
+</html>

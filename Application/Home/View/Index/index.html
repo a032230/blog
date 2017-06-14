@@ -1,0 +1,41 @@
+<layout name='layout' />
+<link href="__PUBLIC__/Home/css/index.css" rel="stylesheet">
+<div class="template">
+  <div class="box">
+    <h3>
+      <p><span>个人博客</span>模板 Templates</p>
+    </h3>
+    <ul>
+      <li><a href="/"  target="_blank"><img src="__PUBLIC__/Home/images/01.jpg"></a><span>仿新浪博客风格・梅――古典个人博客模板</span></li>
+      <li><a href="/" target="_blank"><img src="__PUBLIC__/Home/images/02.jpg"></a><span>黑色质感时间轴html5个人博客模板</span></li>
+      <li><a href="/"  target="_blank"><img src="__PUBLIC__/Home/images/03.jpg"></a><span>Green绿色小清新的夏天-个人博客模板</span></li>
+      <li><a href="/" target="_blank"><img src="__PUBLIC__/Home/images/04.jpg"></a><span>女生清新个人博客网站模板</span></li>
+      <li><a href="/"  target="_blank"><img src="__PUBLIC__/Home/images/02.jpg"></a><span>黑色质感时间轴html5个人博客模板</span></li>
+      <li><a href="/"  target="_blank"><img src="__PUBLIC__/Home/images/03.jpg"></a><span>Green绿色小清新的夏天-个人博客模板</span></li>
+    </ul>
+  </div>
+</div>
+<article>
+  <h2 class="title_tj">
+    <p>文章<span>推荐</span></p>
+  </h2>
+  <div class="bloglist left">
+    <foreach name='data' item ='v'>
+    <div class="lists">
+      <h3>{$v.title}</h3>
+      <ul>
+        <p><?php $str = substr($v['content'],0,230); echo $str.'....';?></p>
+        <a href="{:U('Art/detail')}?art_id={$v.art_id}&cat_id={$v.cat_id}" target="_blank" class="readmore">阅读全文>></a></p>
+      </ul>
+      <p class="dateview"><span><?php echo date("Y-m-d H:i:s",$v['pubtime']) ?></span><span>作者：杨青</span><span>个人博客：[<a href="">{$v.catname}</a>]</span><span style="margin-left: 100px">阅读次数：{$v.click}</span></p>
+    </div>
+    </foreach>
+    <div class="page">{$page}</div>
+  </div>
+<!-- <include file="{:T('Public/right')}" /> -->
+
+<?php include T('Public/right')?>
+</article>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>博客</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="__PUBLIC__/Home/css/base.css" rel="stylesheet">
+
+<!--[if lt IE 9]>
+<script src="js/modernizr.js"></script>
+<![endif]-->
+</head>
+<body>
+<header>
+  <nav class="topnav" id="topnav">
+    <a href="{:U('Index/index')}"><span>首页</span><span class="en">Home</span></a>
+    <foreach name='cats' item='v'>
+    <a href="{:U('Art/article')}?cat_id={$v.cat_id}"><span>{$v.catname}</span><span class="en">{$v.hover}</span></a>
+    </foreach>
+    <a href="{:U('Msg/chat')}"><span>随言碎语</span><span class="en">Message</span></a>
+    <a href="{:U('Admin/Index/index')}"><span>GitHub</span><span class="en">GitHub</span></a>
+    <a href="{:U('Admin/Index/index')}"><span>后台管理</span><span class="en">Admin</span></a>
+
+    </nav>
+  </nav>
+</header>
+
+{__CONTENT__}
+
+
+
+<footer>
+  <p>Design by DanceSmile <a href="http://www.miitbeian.gov.cn/" target="_blank">蜀ICP备11002373号-1</a> <a href="/">网站统计</a></p>
+</footer>
