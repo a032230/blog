@@ -25,9 +25,25 @@ class AdminController extends Controller{
          $this->display();
       }
       //修改密码
-      public function editpass()
+      public function pass()
       {
-
+         $id = session('id');
+            $model = D('admin');
+            if(IS_POST){
+               if(session('auth') === '0'){
+                  $this -> error('你没有操作权限！');
+                  exit;
+               }
+               // 调用Admin模型的check方法
+               if($data = $model -> check()){
+                  session(null);
+                  $this -> success('密码修改成功,请重新登陆',U('login'));
+                  exit;
+               }  
+            
+            $this->error($model->getError());
+         }
+            $this -> display();
       }
 
    //退出

@@ -6766,3 +6766,87 @@ INFO: [ app_end ] --START--
 INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000402s ]
 INFO: [ app_end ] --END-- [ RunTime:0.000434s ]
 
+[ 2017-06-14T21:20:08+08:00 ] 127.0.0.1 /index.php/Home/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000334s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000534s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000579s ]
+SQL: SHOW COLUMNS FROM `art` [ RunTime:0.0022s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `art` LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT a.art_id,a.cat_id,a.title,a.content,a.pubtime,a.nick,a.click,b.catname FROM art a left join cat b on a.cat_id = b.cat_id  LIMIT 0,5   [ RunTime:0.0009s ]
+SQL: SELECT `art_id`,`title` FROM `art` ORDER BY pubtime desc  [ RunTime:0.0002s ]
+SQL: SELECT `art_id`,`title` FROM `art` ORDER BY click desc LIMIT 5   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `cat` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `cat`  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+NOTIC: [2] file_get_contents(./Application/Home/View/{/T('Public/right')}.html): failed to open stream: No such file or directory D:\xampp\htdocs\blog\ThinkPHP\Library\Think\Template.class.php 第 696 行.
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000053s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000087s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007077s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007118s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000259s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000286s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000420s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000456s ]
+
+[ 2017-06-14T21:24:55+08:00 ] 127.0.0.1 /index.php/Home/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000335s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000558s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000617s ]
+SQL: SHOW COLUMNS FROM `art` [ RunTime:0.0022s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `art` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT a.art_id,a.cat_id,a.title,a.content,a.pubtime,a.nick,a.click,b.catname FROM art a left join cat b on a.cat_id = b.cat_id  LIMIT 0,5   [ RunTime:0.0009s ]
+SQL: SELECT `art_id`,`title` FROM `art` ORDER BY pubtime desc  [ RunTime:0.0003s ]
+SQL: SELECT `art_id`,`title` FROM `art` ORDER BY click desc LIMIT 5   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `cat` [ RunTime:0.0019s ]
+SQL: SELECT * FROM `cat`  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+NOTIC: [2] file_get_contents(./Application/Home/View/{/T('Public/right')}.html): failed to open stream: No such file or directory D:\xampp\htdocs\blog\ThinkPHP\Library\Think\Template.class.php 第 696 行.
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000063s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000135s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009345s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009400s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000350s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000386s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000562s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000607s ]
+
+[ 2017-06-14T21:25:34+08:00 ] 127.0.0.1 /index.php/Home/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000335s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000489s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000534s ]
+SQL: SHOW COLUMNS FROM `art` [ RunTime:0.0021s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `art` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT a.art_id,a.cat_id,a.title,a.content,a.pubtime,a.nick,a.click,b.catname FROM art a left join cat b on a.cat_id = b.cat_id  LIMIT 0,5   [ RunTime:0.0008s ]
+SQL: SELECT `art_id`,`title` FROM `art` ORDER BY pubtime desc  [ RunTime:0.0002s ]
+SQL: SELECT `art_id`,`title` FROM `art` ORDER BY click desc LIMIT 5   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `cat` [ RunTime:0.0017s ]
+SQL: SELECT * FROM `cat`  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+NOTIC: [2] file_get_contents(./Application/Home/View/{/T('Public/right')}.html): failed to open stream: No such file or directory D:\xampp\htdocs\blog\ThinkPHP\Library\Think\Template.class.php 第 696 行.
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000037s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000075s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006970s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000253s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000279s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000395s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000426s ]
+

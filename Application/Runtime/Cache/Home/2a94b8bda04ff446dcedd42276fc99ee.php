@@ -17,7 +17,7 @@
     <a href="<?php echo U('Index/index');?>"><span>首页</span><span class="en">Home</span></a>
     <?php if(is_array($cats)): foreach($cats as $key=>$v): ?><a href="<?php echo U('Art/article');?>?cat_id=<?php echo ($v["cat_id"]); ?>"><span><?php echo ($v["catname"]); ?></span><span class="en"><?php echo ($v["hover"]); ?></span></a><?php endforeach; endif; ?>
     <a href="<?php echo U('Msg/chat');?>"><span>随言碎语</span><span class="en">Message</span></a>
-    <a href="<?php echo U('Admin/Index/index');?>"><span>GitHub</span><span class="en">GitHub</span></a>
+    <a href="https://github.com/a032230/blog"><span>GitHub</span><span class="en">GitHub</span></a>
     <a href="<?php echo U('Admin/Index/index');?>"><span>后台管理</span><span class="en">Admin</span></a>
 
     </nav>
